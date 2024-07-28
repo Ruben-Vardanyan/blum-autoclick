@@ -11,8 +11,8 @@ import pygetwindow as gw
 
 
 
-telegram_window = gw.getWindowsWithTitle('Document - Google Chrome')[0]
-# telegram_window = gw.getWindowsWithTitle('TelegramDesktop')[0]
+# telegram_window = gw.getWindowsWithTitle('Document - Google Chrome')[0]
+telegram_window = gw.getWindowsWithTitle('TelegramDesktop')[0]
 
 
 if telegram_window:
