@@ -1,7 +1,7 @@
 '''
 28/07/2024 
 Author Ruben Vardanyan
-Blum-autoclicker version 1.0
+Blum-autoclicker version 1.1
 '''
 
 
