@@ -11,8 +11,8 @@ import pygetwindow as gw
 
 
 
-telegram_window = gw.getWindowsWithTitle('Document - Google Chrome')[0]
-# telegram_window = gw.getWindowsWithTitle('TelegramDesktop')[0]
+#telegram_window = gw.getWindowsWithTitle('Document - Google Chrome')[0]
+telegram_window = gw.getWindowsWithTitle('TelegramDesktop')[0]
 
 
 if telegram_window:
@@ -41,12 +41,20 @@ if telegram_window:
             
                 r, g, b = scrn.getpixel((x, y))
                 # r in range(80, 160)) and (g in range(150, 255)) and (b in range(0, 125)
-                if (b in range(0, 125)) and (r in range(102, 220)) and (g in range(200, 255)):
-                    screen_x = window_rect[0] + x
-                    screen_y = window_rect[1] + y
-                    pyautogui.click(screen_x + 4, screen_y + 10)
-                    # pyautogui.click(screen_x + 4, screen_y + 5)
+                if (b in range(0, 125)) and (r in range(102, 220)) and (g in range(200, 255)) :
+                    if (r, g, b) not in [
+                        (122, 122, 122),
+                        (251, 250, 229),
+                        (190, 192, 191),
+                        (138, 130, 128),
+                        (225, 211, 140),
+                        (202, 192, 143)
+                    ]:
+                        screen_x = window_rect[0] + x
+                        screen_y = window_rect[1] + y
+                        pyautogui.click(screen_x + 4, screen_y + 10)
+                        # pyautogui.click(screen_x + 4, screen_y + 5)
 
-                    time.sleep(0.001)
-                    break
+                        time.sleep(0.001)
+                        break
                  
