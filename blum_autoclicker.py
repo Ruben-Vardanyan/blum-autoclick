@@ -1,7 +1,7 @@
 '''
 28/07/2024 
 Author Ruben Vardanyan
-Blum-autoclicker version 1.1
+Blum-autoclicker version 1.2
 '''
 
 
@@ -29,32 +29,36 @@ if telegram_window:
     )
 
     start_time = time.time()
-    duration = 30  # Run for 20 seconds
+    duration = 30  # Run for 30 seconds
 
     while time.time() - start_time < duration:
+        
+        # getting telegram window details
         scrn = pyautogui.screenshot(region=(window_rect[0], window_rect[1], window_rect[2], window_rect[3]))
-
+        
+        # getting telegram window sizes
         width, height = scrn.size
 
-        for y in range(0, height, 15):
-            for x in range(0, width, 15):
-            
+        # coordinating the screen 
+        
+        for x in range(0, width, 15):# 15 
+            for y in range(0, height, 15):# 15  
                 r, g, b = scrn.getpixel((x, y))
-                # r in range(80, 160)) and (g in range(150, 255)) and (b in range(0, 125)
-                if (b in range(0, 125)) and (r in range(102, 220)) and (g in range(200, 255)) :
-                    if (r, g, b) not in [
-                        (122, 122, 122),
-                        (251, 250, 229),
-                        (190, 192, 191),
-                        (138, 130, 128),
-                        (225, 211, 140),
-                        (202, 192, 143)
-                    ]:
-                        screen_x = window_rect[0] + x
-                        screen_y = window_rect[1] + y
-                        pyautogui.click(screen_x + 4, screen_y + 10)
-                        # pyautogui.click(screen_x + 4, screen_y + 5)
-
-                        time.sleep(0.001)
-                        break
-                 
+                if 80 <= r <= 160 and 160 <= g <= 210 and 30 <= b <= 120:
+                    screen_x = window_rect[0] + x
+                    screen_y = window_rect[1] + y
+                    pyautogui.click(screen_x +2, screen_y + 8)
+                    time.sleep(0.004)
+                    break
+                # if 80 <= r <= 90 and 160 <= g <= 170 and 175 <= b <= 185:
+                #     duration += 3
+                #     screen_x = window_rect[0] + x
+                #     screen_y = window_rect[1] + y
+                #     pyautogui.click(screen_x +2, screen_y + 7)
+                #     time.sleep(0.004)
+                #     break  
+                #if (r in range(80, 160)) and (g in range(160, 210)) and (b in range(30, 120)):
+                
+                #test freezer - add 3 seconds if clicked
+                #if (r in range(80, 90)) and (g in range(160, 170)) and (b in range(175,185)):
+                  
