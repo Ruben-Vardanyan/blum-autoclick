@@ -12,7 +12,7 @@ To get started with Blum-Autoclicker, follow these steps:
 1. **Clone the Repository**:
    ```bash
    git clone https://github.com/Ruben-Vardanyan/blum-autoclick.git
-   cd blum-autoclicker
+   cd blum-autoclick
 
 2. **Create a Virtual Environment**:
     ```bash
